@@ -1,0 +1,14 @@
+#endpoint: ''
+endpoint: https://us1.prisma.sh/patrick-431cc6/chatty-graphql-api/dev
+
+datamodel: datamodel.graphql
+
+seed:
+  import: seed.graphql
+
+secret: mysecret123
+
+hooks:
+  post-deploy:
+    - graphql get-schema --project database
+    - graphql prepare

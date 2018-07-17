@@ -1,0 +1,20 @@
+# import User, Message, Group from "./generated/prisma.graphql"
+
+type Query {
+  # Return a user by their email or id
+  user(email: String, id: Int): User
+
+  # Return a group by its id -- must supply an id to query
+  group(id: Int!): Group
+
+  # Return messages sent to a group via groupId
+  messages(groupId: Int, userId: Int): [Message]
+}
+
+type Mutation {
+  createUser(email: String!, username: String): User!
+
+  addUserToGroup(groupId: String!, userId: String!): Group
+
+  addMessageToGroup(groupId: String!, userId: String!, text: String!): Message
+}
