@@ -9,12 +9,16 @@ type Query {
 
   # Return messages sent to a group via groupId
   messages(groupId: Int, userId: Int): [Message]
+
+  getGroupById(groupId: ID!): Group
+
+  getAllGroups: [Group]
 }
 
 type Mutation {
   createUser(email: String!, username: String): User!
 
-  addUserToGroup(groupId: String!, userId: String!): Group
+  addUserToGroup(groupId: ID!, userId: ID!): Group
 
-  addMessageToGroup(groupId: String!, userId: String!, text: String!): Message
+  addMessageToGroup(groupId: ID!, userId: ID!, text: String!): Message
 }
