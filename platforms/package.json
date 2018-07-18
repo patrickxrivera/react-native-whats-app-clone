@@ -1,0 +1,51 @@
+{
+    "name": "react-native-web-starter",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "apollo-boost": "^0.1.10",
+        "apollo-cache-inmemory": "^1.2.5",
+        "apollo-link-http": "^1.5.4",
+        "art": "^0.10.3",
+        "expo": "^27.0.0",
+        "graphql": "^0.13.2",
+        "graphql-tag": "^2.9.2",
+        "lodash": "^4.17.10",
+        "moment": "^2.22.2",
+        "prop-types": "^15.6.2",
+        "randomcolor": "^0.5.3",
+        "react": "16.3.1",
+        "react-apollo": "^2.1.9",
+        "react-dom": "^16.3.1",
+        "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
+        "react-native-web": "^0.8.2",
+        "react-scripts": "^1.1.4"
+    },
+    "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+    "scripts": {
+        "web": "react-scripts start",
+        "build-web": "react-scripts build",
+        "test-web": "react-scripts test --env=jsdom",
+        "eject-web": "react-scripts eject",
+        "start-native": "react-native-scripts start",
+        "eject-native": "react-native-scripts eject",
+        "android": "react-native-scripts android",
+        "ios": "react-native-scripts ios",
+        "test-native": "node node_modules/jest/bin/jest.js --watch",
+        "test": "yarn run test-web && yarn run test-native"
+    },
+    "jest": {
+        "preset": "jest-expo"
+    },
+    "devDependencies": {
+        "babel-plugin-react-native-web": "^0.6.1",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-plugin-transform-react-jsx-source": "^6.22.0",
+        "babel-preset-expo": "^4.0.0",
+        "flow-bin": "^0.66.0",
+        "jest-expo": "^27.0.0",
+        "react-art": "^16.3.1",
+        "react-native-scripts": "^1.13.1",
+        "react-test-renderer": "16.3.1"
+    }
+}
