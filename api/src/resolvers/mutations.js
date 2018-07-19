@@ -8,6 +8,8 @@ const createUser = (root, { email, username }, ctx, info) =>
     }
   });
 
+const createGroup = (root, { name }, ctx, info) => ctx.db.mutation.createGroup({ data: { name } });
+
 const addUserToGroup = (root, { groupId, userId }, ctx, info) =>
   ctx.db.mutation.updateGroup(
     {
@@ -33,6 +35,7 @@ const addMessageToGroup = (root, { groupId, userId, text }, ctx, info) =>
 
 module.exports = {
   createUser,
+  createGroup,
   addUserToGroup,
   addMessageToGroup
 };

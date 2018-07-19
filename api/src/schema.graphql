@@ -18,6 +18,8 @@ type Query {
 type Mutation {
   createUser(email: String!, username: String): User!
 
+  createGroup(name: String!): Group!
+
   addUserToGroup(groupId: ID!, userId: ID!): Group
 
   addMessageToGroup(groupId: ID!, userId: ID!, text: String!): Message

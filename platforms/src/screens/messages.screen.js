@@ -1,4 +1,4 @@
-import { FlatList, Text, StyleSheet, View } from 'react-native';
+import { FlatList, ScrollView, Text, StyleSheet, View } from 'react-native';
 import { Query } from 'react-apollo';
 import React, { Component } from 'react';
 import Message from '../components/messages.component';
@@ -40,6 +40,10 @@ const formatMessage = (message) => ({
 });
 
 class Messages extends Component {
+  state = {
+    groupId: 'cjjru03jqca5g0b0215vxm384'
+  };
+
   keyExtractor = (item) => item.message.id.toString();
 
   renderItem = ({ item: { isCurrentUser, message, color } }) => (
@@ -50,7 +54,7 @@ class Messages extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.messageWrapper}>
-          <Query query={GET_GROUP_BY_ID} variables={{ groupId: 'cjjqa7zlrbvi60b029ic8ytdi' }}>
+          <Query query={GET_GROUP_BY_ID} variables={{ groupId: this.state.groupId }}>
             {({ data, loading, error }) => {
               if (loading) return renderLoading();
               if (error) return renderError(error);

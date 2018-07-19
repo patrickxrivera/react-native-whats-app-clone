@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Animated, StyleSheet, StatusBar } from 'react-native';
 
 import Messages from './screens/messages.screen';
+import MessageInput from './components/MessageInput';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.app}>
         <Messages />
+        <MessageInput />
       </View>
     );
   }
